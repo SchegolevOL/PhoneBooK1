@@ -1,0 +1,28 @@
+<form (submit)="onFormSubmint(type.value)">
+    <div class="mb-3 col">
+        <label  class="form-label">Name</label>
+        <input [(ngModel)]="phone.name"  name="name" type="text" class="form-control" placeholder="Enter name">
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">SurName</label>
+        <input [(ngModel)]="phone.surName"  name="surName" type="text" class="form-control" placeholder="Enter surname">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Patronymic</label>
+        <input [(ngModel)]="phone.patronymic"  name="patronymic"  type="text" class="form-control" placeholder="Enter patronymic">
+    </div>
+    <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">PhoneNumber</label>
+        <input [(ngModel)]="phone.phoneNumber"  name="phoneNumber" type="text" id="disabledTextInput" class="form-control" placeholder="Enter phone number">
+    </div>
+    
+    <div  class="mb-3">
+        <label class="form-label">Phone type</label>
+        <select   name="type" class="form-select"  #type>
+            <option  *ngFor="let type of phoneTypes.types" >{{type}}</option>
+        </select>
+    </div>
+    
+    <button  type="submit" class="btn btn-primary">Отправить</button>
+
+</form>

@@ -1,0 +1,4 @@
+<app-phone-form (added)="addPhone($event)"></app-phone-form>
+<app-phone-item *ngFor="let phone of bookRepositoryService.PhoneBook ;" (removed)="removePhone($event)" (edit)="editPhone($event)" [item]="phone "></app-phone-item>
+
+

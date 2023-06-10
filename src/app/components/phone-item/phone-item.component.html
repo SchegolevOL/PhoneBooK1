@@ -1,0 +1,50 @@
+<div>
+    <div class="row text-center">
+        <div class="col  width">
+            <button (click)="onRemovePhone()">del</button>
+            <button (click)="selectEdit=!selectEdit">edit</button>
+
+        </div>
+        <div class="col width">
+            {{item.name}}
+        </div>
+        <div class="col width">
+            {{item.surName}}
+        </div>
+        <div class="col width">
+            {{item.patronymic}}
+        </div>
+        <div class="col width">
+            {{item.phoneNumber}}
+        </div>
+        <div class="col width">
+            {{item.typePhone}}
+        </div>
+    </div>
+</div>
+<div *ngIf="selectEdit">
+    <div class="row text-center">
+        <div class="col  width">
+
+            <button (click)="onEditPhone(type.value)">edit</button>
+
+        </div>
+        <div class="col width">
+            <input [(ngModel)]="item.name" type="text" aria-label="First name" class="form-control  text-center">
+        </div>
+        <div class="col width">
+            <input [(ngModel)]="item.surName" type="text" aria-label="First name" class="form-control  text-center">
+        </div>
+        <div class="col width">
+            <input [(ngModel)]="item.patronymic" type="text" aria-label="First name" class="form-control  text-center">
+        </div>
+        <div class="col width">
+            <input [(ngModel)]="item.phoneNumber" type="text" aria-label="First name" class="form-control  text-center">
+        </div>
+        <div class="col width">
+            <select  name="type" class="form-select" #type>
+                <option *ngFor="let type of phoneTypes.types">{{type}}</option>
+            </select>
+        </div>
+    </div>
+</div>
